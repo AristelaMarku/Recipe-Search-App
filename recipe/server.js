@@ -15,7 +15,7 @@ const server = createServer((req, res) => {
     const requestURL = url.parse(req.url);
     const decodedParams = decodeParams(new URLSearchParams(requestURL.search));
     const { search } = decodedParams;
-    const targetURL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}`;
+    const targetURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=4c4341ce55614f2688445e5f6132eb1e&query=${search}`;
     if (req.method === 'GET') {
         console.log(chalk.green(`Proxy GET request to : ${targetURL}`));
         axios.get(targetURL)
